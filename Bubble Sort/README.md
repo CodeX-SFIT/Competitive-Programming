@@ -1,15 +1,17 @@
-# Competitive-Programming
+# Bubble Sort
 
-# __To begin Competitive coding there are six steps__:
-## Choose programming language
-  There are 700 programming languages you can choose any of them the topmost programming languages are python, javascript, Java, C++, C. You have to get familiar with basic syntax which would take upto couple of days.
-## Make your Logic clear
-  The logic behind writing programs should be clear. Try to solve the problem yourself using basic inputs, various cases and derive a general logic which satisfies the required condition. Develop your perspective so as to consider the extreme or edge cases as well.
-## Time and Space Complexity
-  Your logic is clear, the code may also be correct but the output exceeds the given time limit to solve the question, thus it shows a TLE error. This is the most common problem faced by programmers. To overcome this, one has to analyze their code and by using various DS-Algo techniques, obtain a optimal solution which gives the correct output within the given constraints, the more you practice the better you'll be in it.
-## Data Structures and Algorithm
-  It is like vocabulary more you know about it, more you grow. Learn DSA from various coding sites, watch videos and most importantly practice sufficient problems on the same untill you develop confidence on applying them. A good grip on DSA ensures a strong foundation for programming.
-## Practice Regularly
-  Make sure you solve atleast one or two coding problems daily. Practicing regularly ensures your concepts are revised, also you get to know new concepts, functions and improves your problem solving skills.
-## Participate in Coding Competition
-  Participation in contest will make you know where you stand. A healthy competition among your friends, peers or colleagues ensures everyone's growth. Later discussion of problems gets to know you different approaches to solve a same problem. Editorials is a must, even if you have successfully solved a problem make sure you see its editorial too because you may find something new or an optimal way.
+Bubble sort is a very simple method that sorts the array elements by repeatedly moving the largest element to the highest index position of the array segment (in case of arranging elements in ascending order). In bubble sorting, consecutive adjacent pairs of elements at the higher index, the two elements are interchanged so that the element is placed before the bigger one. This process will continue till the list of unsorted elements exhausts.
+This procedure of sorting is called bubble sorting because elements ‘bubble’ to the top of the list. Note that at end of the first pass, the largest element in the list will be placed at its proper position (i.e., at the end of the list).
+### Technique: 
+1. In Pass 1, A [0] and A [1] are compared, then A [1] is compared with A [2], A [2] is compared with A [3], and so on. Finally, A[N-2] is compared with A[N-1]. Pass 1 involves n-1 comparisons and places the biggest element at the highest index of the array.
+2. In Pass 2, A [0] and A [1] are compared, then A [ 1] is compared with A [2], A [2] is compared with A[3], and so on. Finally, A[N-3] is compared with A[N-2]. Pass 2 involves n-2 comparisons and places the second biggest element at the second highest index of the array.
+3. In Pass 3. A[O] and A [1) are compared, then A [1] is compared with A [2], A [2] is compared with A [3]. and so on. Finally, A[N-4] is compared with A[N-3]. Pass 3 involves n-3 comparisons and places the third biggest element at the third highest index of the array. 
+4. In Pass n-1, A[o] and A [ 1] are compared so that A [0] <A [1]. After this step, all the elements of the array are arranged in ascending order.
+Complexity of Bubble Sort
+The complexity of any sorting sort, we have seen algorithm depends upon the number of comparisons. that there are N-1 passes in total. In the first pass, N-1 comparisons arc place the highest element in its correct position. Then, in Pass 2, there are N-2 comparisons, and the second highest element is placed in its position. Therefore, to compute the complexity of bubble sort, we need to calculate the total number of du comparisons. It can be given as 
+```
+f(n) = n +(n - 1) +(n - 2) +(n -3)+.... +3 + 2 +1
+f(n) = n(n-1)/2
+f(n) =n^2/2+ O(n) = O(n^2)
+```
+Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
