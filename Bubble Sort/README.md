@@ -13,7 +13,7 @@ The complexity of any sorting sort, we have seen algorithm depends upon the numb
 ```
 f(n) = n +(n - 1) +(n - 2) +(n -3)+.... +3 + 2 +1
 f(n) = n(n-1)/2
-f(n) =n^2/2+ O(n) = O(n^2)
+f(n) = n^2/2+ O(n) = O(n^2)
 ```
 Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
 
