@@ -1,21 +1,15 @@
 # Competitive-Programming-Algorithms
 
 ## Table of contents
-* [Sorting Algorithms](#sorting)
 * [Sorting Algorithms](#sorting-algorithms)
-* [Sorting Algorithms](#sorting#algorithms)* [Sorting Algorithms](#sorting#algorithms)* [Sorting Algorithms](#sorting#algorithms)
-* [Sorting Algorithms](#sorting#algorithms)
-* [Sorting Algorithms](#sorting#algorithms)
-* [Sorting Algorithms](#sorting#algorithms)* [Sorting Algorithms](#sorting#algorithms)
-* [Sorting Algorithms](#sorting#algorithms)
-Sass Tutorial (w3schools)
-Back to table of contents
-JAVASCRIPT FRAMEWORKS
-Angular vs React vs Vue (video)
-React
-Angular
-Vue
-Back to table of contents
-React
 
 ## Sorting Algorithms
+* [Bubble Sort](#bubble-sort)
+* [Insertion Sort](#insertion-sort)
+* [Selection Sort](#selection-sort)
+* [Merge Sort](#merge-sort)
+* [Quick Sort](#quick-sort)
+* [Radix Sort](#radix-sort)
+* [Heap Sort](#heap-sort)
+* [Shell Sort](#radix-sort)
+
