@@ -22,7 +22,8 @@ Therefore, the complexity of bubble sort algorithm is o(n*). It means the time r
 ![Alt text](../images/bubble-sort.png?raw=true "Title")
 
 ## Reference :
- https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
+ <a href="https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/" target="_blank">Hackerearth</a>
  <br>
- https://www.geeksforgeeks.org/bubble-sort/
+ <a href="https://www.geeksforgeeks.org/bubble-sort//" target="_blank">Geeks for Geeks</a>
+
 
