@@ -21,20 +21,20 @@ During each iteration of the algorithm, the first element in the unsorted set is
 INSERTIONSORT (ARR, N)
 Step 1: Repeat Steps 2 to 5 for K= 1 to N - 1
 Step 2: SET TEMP =ARR[K]
-Step 3:  SET J= K 1
+Step 3: SET J= K 1
 Step 4: Repeat while TEMP <= ARR[J]
-SET ARR[J + 1] = ARR[J]
-SET J=J- 1
-[END OF INNER LOOP]
+        SET ARR[J + 1] = ARR[J]
+        SET J=J- 1
+        [END OF INNER LOOP]
 Step 5: SET ARR[J + 1] = TEMP
-[END OF LOOP]
+        [END OF LOOP]
 Step 6: EXIT
 ```
 Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
 
 ## Pictoral Representation
 
-![Alt text](../images/bubble-sort.png?raw=true "Title")
+![Alt text](../images/insertion-sort.png?raw=true "Title")
 
 ## Reference :
  <a href="https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/tutorial/">Hackerearth</a>
