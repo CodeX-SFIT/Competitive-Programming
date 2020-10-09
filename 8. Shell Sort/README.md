@@ -1,28 +1,55 @@
-# Bubble Sort
+# Shell Sort
 
-Bubble sort is a very simple method that sorts the array elements by repeatedly moving the largest element to the highest index position of the array segment (in case of arranging elements in ascending order). In bubble sorting, consecutive adjacent pairs of elements at the higher index, the two elements are interchanged so that the element is placed before the bigger one. This process will continue till the list of unsorted elements exhausts.
-This procedure of sorting is called bubble sorting because elements ‘bubble’ to the top of the list. Note that at end of the first pass, the largest element in the list will be placed at its proper position (i.e., at the end of the list).
+Shell sort, invented by Donald Shell in 1959, is a sorting algorithm that is a generalization of
+insertion sort. While discussing insertion sort, we have observed two things:
+Σ First, insertion sort works well when the input data is ‘almost sorted’.
+Σ Second, insertion sort is quite inefficient to use as it moves the values just one position at a
+time.
+
+Shell sort is considered an improvement over insertion sort as it compares elements separated
+by a gap of several positions. This enables the element to take bigger steps towards its expected
+position. In Shell sort, elements are sorted in multiple passes and in each pass, data are taken with
+smaller and smaller gap sizes. However, the last step of shell sort is a plain insertion sort. But by
+the time we reach the last step, the elements are already ‘almost sorted’, and hence it provides
+good performance.
+
+If we take a scenario in which the smallest element is stored in the other end of the array, then
+sorting such an array with either bubble sort or insertion sort will execute in O(n2) time and take
+roughly n comparisons and exchanges to move this value all the way to its correct position. On
+the other hand, Shell sort first moves small values using giant step sizes, so a small value will
+move a long way towards its final position, with just a few comparisons and exchanges.
 
 ## Technique
-1. In Pass 1, A [0] and A [1] are compared, then A [1] is compared with A [2], A [2] is compared with A [3], and so on. Finally, A[N-2] is compared with A[N-1]. Pass 1 involves n-1 comparisons and places the biggest element at the highest index of the array.
-2. In Pass 2, A [0] and A [1] are compared, then A [ 1] is compared with A [2], A [2] is compared with A[3], and so on. Finally, A[N-3] is compared with A[N-2]. Pass 2 involves n-2 comparisons and places the second biggest element at the second highest index of the array.
-3. In Pass 3. A[O] and A [1) are compared, then A [1] is compared with A [2], A [2] is compared with A [3]. and so on. Finally, A[N-4] is compared with A[N-3]. Pass 3 involves n-3 comparisons and places the third biggest element at the third highest index of the array. 
-4. In Pass n-1, A[o] and A [ 1] are compared so that A [0] <A [1]. After this step, all the elements of the array are arranged in ascending order.
-Complexity of Bubble Sort
-The complexity of any sorting sort, we have seen algorithm depends upon the number of comparisons. that there are N-1 passes in total. In the first pass, N-1 comparisons arc place the highest element in its correct position. Then, in Pass 2, there are N-2 comparisons, and the second highest element is placed in its position. Therefore, to compute the complexity of bubble sort, we need to calculate the total number of du comparisons. It can be given as 
+
+To visualize the way in which shell sort works, perform the following steps:
+Σ Step 1: Arrange the elements of the array in the form of a table and sort the columns (using
+insertion sort).
+Σ Step 2: Repeat Step 1, each time with smaller number of longer columns in such a way that
+at the end, there is only one column of data to be sorted.
+Note that we are only visualizing the elements being arranged in a table, the algorithm does its
+sorting in-place.
+
+## Algorithm
+
 ```
-f(n) = n +(n - 1) +(n - 2) +(n -3)+.... +3 + 2 +1
-f(n) = n(n-1)/2
-f(n) = n^2/2+ O(n) = O(n^2)
+Step 1: SET FLAG = 1, GAP_SIZE = N
+Step 2: Repeat Steps 3 to 6 while FLAG = 1 OR GAP_SIZE > 1
+Step 3: SET FLAG =
+Step 4: SET GAP_SIZE = (GAP_SIZE + 1) / 2
+Step 5: Repeat Step 6 for I = to I < (N - GAP_SIZE)
+Step 6: IF Arr[I + GAP_SIZE] > Arr[I]
+         SWAP Arr[I + GAP_SIZE], Arr[I]
+         SET FLAG = 0
+        [END OF IF]
+Step 7: END
 ```
-Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
 
 ## Pictoral Representation
 
-![Alt text](../images/bubble-sort.png?raw=true "Title")
+![Alt text](../images/shell-sort.png?raw=true "Title")
 
 ## Reference :
- https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
+ <a href="https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_algorithm.htm">Tutorials Point</a>
  <br>
- https://www.geeksforgeeks.org/bubble-sort/
+<a href="https://www.geeksforgeeks.org/shellsort/">Geeks for Geeks</a>
 
