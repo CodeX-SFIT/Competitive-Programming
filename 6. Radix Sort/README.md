@@ -41,7 +41,6 @@ Step 9: INCEREMENT bucket count for bucket numbered DIGIT
 Step 10 : Collect the numbers in the bucket
        [END OF LOOP]
 Step 11: END
-
 ```
 
 ## Pictoral Representation
