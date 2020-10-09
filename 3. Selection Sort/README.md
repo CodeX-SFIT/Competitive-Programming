@@ -1,28 +1,49 @@
-# Bubble Sort
-
-Bubble sort is a very simple method that sorts the array elements by repeatedly moving the largest element to the highest index position of the array segment (in case of arranging elements in ascending order). In bubble sorting, consecutive adjacent pairs of elements at the higher index, the two elements are interchanged so that the element is placed before the bigger one. This process will continue till the list of unsorted elements exhausts.
-This procedure of sorting is called bubble sorting because elements ‘bubble’ to the top of the list. Note that at end of the first pass, the largest element in the list will be placed at its proper position (i.e., at the end of the list).
+# Selection Sort
+Selection sort is a sorting algorithm that has a quadratic running time complexity of o(n^2), thereby making it inefficient to be used on large lists. Although selection sort performs worse than insertion sort algorithm, it is noted for its Simplicity and has performance advantages over more complicated algorithms in certain situations. Selection sort is generally used for sorting files with very large objects (records) and small keys.
 
 ## Technique
-1. In Pass 1, A [0] and A [1] are compared, then A [1] is compared with A [2], A [2] is compared with A [3], and so on. Finally, A[N-2] is compared with A[N-1]. Pass 1 involves n-1 comparisons and places the biggest element at the highest index of the array.
-2. In Pass 2, A [0] and A [1] are compared, then A [ 1] is compared with A [2], A [2] is compared with A[3], and so on. Finally, A[N-3] is compared with A[N-2]. Pass 2 involves n-2 comparisons and places the second biggest element at the second highest index of the array.
-3. In Pass 3. A[O] and A [1) are compared, then A [1] is compared with A [2], A [2] is compared with A [3]. and so on. Finally, A[N-4] is compared with A[N-3]. Pass 3 involves n-3 comparisons and places the third biggest element at the third highest index of the array. 
-4. In Pass n-1, A[o] and A [ 1] are compared so that A [0] <A [1]. After this step, all the elements of the array are arranged in ascending order.
-Complexity of Bubble Sort
-The complexity of any sorting sort, we have seen algorithm depends upon the number of comparisons. that there are N-1 passes in total. In the first pass, N-1 comparisons arc place the highest element in its correct position. Then, in Pass 2, there are N-2 comparisons, and the second highest element is placed in its position. Therefore, to compute the complexity of bubble sort, we need to calculate the total number of du comparisons. It can be given as 
+Consider an array ARR With N elements. Selection sort works as follows:
+First find the smallest value in the array and place it in the first position. Then, find the second
+smallest value in the array and place it in the second position. Repeat this procedure until the
+entire array is sorted. Therefore,
+1. In Pass 1, find the position POS of the smallest value in the array and then swap ARR [POS J and ARR[O]. Thus, ARR[O] is sorted.
+2. In Pass 2, find the position POS of the smallest value in sub-array of N-1 elements. Swap ARR[POS] with ARR [1]. Now, ARR[o] and ARR [1] is sorted.
+3. In Pass N-1, find the position POS of the smaller of the elements ARR[N-2] and ARR [N-1 ]. Swap ARR[POS] and ARR[N-2] so that ARR [0], ARR[1], ..., ARR [N-1] is sorted.
+
+
+## Algorithm:
 ```
-f(n) = n +(n - 1) +(n - 2) +(n -3)+.... +3 + 2 +1
-f(n) = n(n-1)/2
-f(n) = n^2/2+ O(n) = O(n^2)
+SMALLEST (ARR, K, N, POS)
+Step 1: [INITIALIZE] SET SMALL = ARR[K]
+Step 2: [INITIALIZE] SET POS = K
+Step 3: Repeat for J = K+1 to N
+          IF SMALL > ARR[J]
+           SET SMALL = ARR[J]
+           SET POS = J
+          [END OF IF]
+        [END OF LOOP]
+Step 4: RETURN POS
+
+SELECTION SORT(ARR, N)
+Step 1: Repeat Steps 2 and 3 for K = 1 to N-1
+Step 2: CALL SMALLEST(ARR, K, N, POS)
+Step 3: SWAP A[K] with ARR[POS]
+        [END OF LOOP]
+Step 4: EXIT
+
 ```
-Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
 
 ## Pictoral Representation
+![Alt text](../images/selection-sort.png?raw=true "Title")
 
-![Alt text](../images/bubble-sort.png?raw=true "Title")
-
-## Reference :
- https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
+## Reference 
+ <a href="https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/tutorial/">Hackerearth</a>
  <br>
- https://www.geeksforgeeks.org/bubble-sort/
+<a href="https://www.geeksforgeeks.org/selection-sort/">Geeks for Geeks</a>
+
+## Complexity of Selection Sort
+Selection sort is a sorting algorithm that is independent of the original order of elements in the
+array. In Pass 1, selecting the element with the smallest value calls for scanning all n elements; thus, n–1 comparisons are required in the first pass. Then, the smallest value is swapped with the element in the first position. In Pass 2, selecting the second smallest value requires scanning the remaining n – 1 elements and so on. Therefore,
+(n – 1) + (n – 2) + ... + 2 + 1
+= n(n – 1) / 2 = O(n2) comparisons
 
