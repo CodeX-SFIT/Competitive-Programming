@@ -33,11 +33,18 @@ Step 6: EXIT
 Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
 
 ## Pictoral Representation
-
 ![Alt text](../images/insertion-sort.png?raw=true "Title")
 
-## Reference :
+## Reference 
  <a href="https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/tutorial/">Hackerearth</a>
  <br>
 <a href="https://www.geeksforgeeks.org/insertion-sort/">Geeks for Geeks</a>
 
+## Complexity of Insertion Sort
+For insertion sort, the best case occurs when the array is already sorted. In this case, the running time of the algorithm has a linear running time (i.e., o(n). This is because, during each iteration, the first element from the unsorted set is compared only with the last element of the sorted set of the array.
+Similarly, the worst case of the insertion sort algorithm occurs when the array is sorted in the
+reverse order. In the worst case, the first clement of the unsorted set must be compared with
+almost every element in the sorted set. Furthermore, every iteration of the inner loop will have
+to shift the elements of the sorted set of the array before inserting the next element. Therefore, in the worst case, insertion sort has a quadratic running time (i.e., o(n ).
+Even if the average case, the insertion Sort algorithm will have to make at least (K-1)/2
+comparisons. Thus, the average case also has a quadratic running time.
