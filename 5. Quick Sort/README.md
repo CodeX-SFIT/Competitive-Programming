@@ -73,3 +73,19 @@ Step 2: END
  <a href="https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/">Hackerearth</a>
  <br>
 <a href="https://www.geeksforgeeks.org/quick-sort/">Geeks for Geeks</a>
+
+## Complexity of Quick Sort
+
+In the average case, the running time of quick sort can be given as O(n log n). The partitioning of
+the array which simply loops over the elements of the array once uses O(n) time.
+In the best case, every time we partition the array, we divide the list into two nearly equal
+pieces. That is, the recursive call processes the sub-array of half the size. At the most, only log n
+nested calls can be made before we reach a sub-array of size 1. It means the depth of the call tree
+is O(log n). And because at each level, there can only be O(n), the resultant time is given as O(n
+log n) time.
+Practically, the efficiency of quick sort depends on the element which is chosen as the pivot.
+Its worst-case efficiency is given as O(n2). The worst case occurs when the array is already sorted
+(either in ascending or descending order) and the left-most element is chosen as the pivot.
+However, many implementations randomly choose the pivot element. The randomized version
+of the quick sort algorithm always has an algorithmic complexity of O(n log n).
+
