@@ -44,6 +44,6 @@ For insertion sort, the best case occurs when the array is already sorted. In th
 Similarly, the worst case of the insertion sort algorithm occurs when the array is sorted in the
 reverse order. In the worst case, the first clement of the unsorted set must be compared with
 almost every element in the sorted set. Furthermore, every iteration of the inner loop will have
-to shift the elements of the sorted set of the array before inserting the next element. Therefore, in the worst case, insertion sort has a quadratic running time (i.e., o(n ).
+to shift the elements of the sorted set of the array before inserting the next element. Therefore, in the worst case, insertion sort has a quadratic running time (i.e., o(n²).
 Even if the average case, the insertion Sort algorithm will have to make at least (K-1)/2
-comparisons. Thus, the average case also has a quadratic running time.
+comparisons. Thus, the average case also has a quadratic running time  o(n²).
