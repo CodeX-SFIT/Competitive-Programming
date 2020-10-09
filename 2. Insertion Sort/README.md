@@ -30,7 +30,6 @@ Step 5: SET ARR[J + 1] = TEMP
         [END OF LOOP]
 Step 6: EXIT
 ```
-Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
 
 ## Pictoral Representation
 ![Alt text](../images/insertion-sort.png?raw=true "Title")
