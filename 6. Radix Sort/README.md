@@ -1,4 +1,4 @@
-# Bubble Sort
+# Radix Sort
 Radix sort is a linear sorting algorithm for integers and uses the concept of sorting names in
 alphabetical order. When we have a list of sorted names, the radix is 26 (or 26 buckets) because
 there are 26 letters in the English alphabet. So radix sort is also known as bucket sort. Observe
