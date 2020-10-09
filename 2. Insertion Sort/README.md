@@ -23,8 +23,8 @@ Step 1: Repeat Steps 2 to 5 for K= 1 to N - 1
 Step 2: SET TEMP =ARR[K]
 Step 3: SET J= K 1
 Step 4: Repeat while TEMP <= ARR[J]
-        SET ARR[J + 1] = ARR[J]
-        SET J=J- 1
+          SET ARR[J + 1] = ARR[J]
+          SET J=J- 1
         [END OF INNER LOOP]
 Step 5: SET ARR[J + 1] = TEMP
         [END OF LOOP]
