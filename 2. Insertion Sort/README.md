@@ -1,19 +1,34 @@
-# Bubble Sort
+# Insertion Sort
 
-Bubble sort is a very simple method that sorts the array elements by repeatedly moving the largest element to the highest index position of the array segment (in case of arranging elements in ascending order). In bubble sorting, consecutive adjacent pairs of elements at the higher index, the two elements are interchanged so that the element is placed before the bigger one. This process will continue till the list of unsorted elements exhausts.
-This procedure of sorting is called bubble sorting because elements ‘bubble’ to the top of the list. Note that at end of the first pass, the largest element in the list will be placed at its proper position (i.e., at the end of the list).
+Insertion sort is a very simple sorting algorithm in which the sorted array (or list) is built one
+element at a time. We all are familiar with this technique of sorting, as we usually use it for ordering a deck of cards while playing bridge.
+The main idea behind insertion sort is that it inserts each item into its proper place in the final
+list. To save memory, most implementations of the insertion sort algorithm work by moving
+the current data element past the already sorted values and repeatedly interchanging it with the preceding value until it is in its correct place.
+Insertion sort is less efficient as compared to other more advanced algorithms such as quick
+sort, heap sort, and merge sort.
 
 ## Technique
-1. In Pass 1, A [0] and A [1] are compared, then A [1] is compared with A [2], A [2] is compared with A [3], and so on. Finally, A[N-2] is compared with A[N-1]. Pass 1 involves n-1 comparisons and places the biggest element at the highest index of the array.
-2. In Pass 2, A [0] and A [1] are compared, then A [ 1] is compared with A [2], A [2] is compared with A[3], and so on. Finally, A[N-3] is compared with A[N-2]. Pass 2 involves n-2 comparisons and places the second biggest element at the second highest index of the array.
-3. In Pass 3. A[O] and A [1) are compared, then A [1] is compared with A [2], A [2] is compared with A [3]. and so on. Finally, A[N-4] is compared with A[N-3]. Pass 3 involves n-3 comparisons and places the third biggest element at the third highest index of the array. 
-4. In Pass n-1, A[o] and A [ 1] are compared so that A [0] <A [1]. After this step, all the elements of the array are arranged in ascending order.
-Complexity of Bubble Sort
-The complexity of any sorting sort, we have seen algorithm depends upon the number of comparisons. that there are N-1 passes in total. In the first pass, N-1 comparisons arc place the highest element in its correct position. Then, in Pass 2, there are N-2 comparisons, and the second highest element is placed in its position. Therefore, to compute the complexity of bubble sort, we need to calculate the total number of du comparisons. It can be given as 
+Insertion sort works as follows:
+The array of values to be sorted is divided into two sets. One that stores sorted values and another that contains unsorted values.
+The sorting algorithm will proceed until there are elements in the unsorted set.
+Suppose there are n elements in the array. Initially, the element with index 0 (assuming LB= 0)  is in the sorted set. Rest of the elements are in the unsorted set.
+The first element of the unsorted partition has array index 1 (if LB = 0).
+During each iteration of the algorithm, the first element in the unsorted set is picked up and inserted into the correct position in the sorted set.
+
+## Algorithm:
 ```
-f(n) = n +(n - 1) +(n - 2) +(n -3)+.... +3 + 2 +1
-f(n) = n(n-1)/2
-f(n) = n^2/2+ O(n) = O(n^2)
+INSERTIONSORT (ARR, N)
+Step 1: Repeat Steps 2 to 5 for K= 1 to N - 1
+Step 2: SET TEMP =ARR[K]
+Step 3:  SET J= K 1
+Step 4: Repeat while TEMP <= ARR[J]
+SET ARR[J + 1] = ARR[J]
+SET J=J- 1
+[END OF INNER LOOP]
+Step 5: SET ARR[J + 1] = TEMP
+[END OF LOOP]
+Step 6: EXIT
 ```
 Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
 
@@ -22,7 +37,7 @@ Therefore, the complexity of bubble sort algorithm is o(n*). It means the time r
 ![Alt text](../images/bubble-sort.png?raw=true "Title")
 
 ## Reference :
- https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
+ <a href="https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/tutorial/">Hackerearth</a>
  <br>
- https://www.geeksforgeeks.org/bubble-sort/
+<a href="https://www.geeksforgeeks.org/insertion-sort/">Geeks for Geeks</a>
 
