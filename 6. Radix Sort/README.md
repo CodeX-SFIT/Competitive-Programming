@@ -47,8 +47,15 @@ Step 11: END
 
 ![Alt text](../images/radix-sort.png?raw=true "Title")
 
-## Reference :
+## Reference 
 <a href="https://www.hackerearth.com/practice/algorithms/sorting/radix-sort/tutorial/">Hackerearth</a>
  <br>
 <a href="https://www.ritambhara.in/radix-sort/ ">Rithambara</a>
 
+## Complexity of Radix Sort
+
+To calculate the complexity of radix sort algorithm, assume that there are n numbers that have to be
+sorted and k is the number of digits in the largest number. In this case, the radix sort algorithm is
+called a total of k times. The inner loop is executed n times. Hence, the entire radix sort algorithm
+takes O(kn) time to execute. When radix sort is applied on a data set of finite size (very small set
+of numbers), then the algorithm runs in O(n) asymptotic time.
