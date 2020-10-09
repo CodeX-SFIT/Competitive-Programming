@@ -1,28 +1,71 @@
-# Bubble Sort
+# Merge Sort
 
-Bubble sort is a very simple method that sorts the array elements by repeatedly moving the largest element to the highest index position of the array segment (in case of arranging elements in ascending order). In bubble sorting, consecutive adjacent pairs of elements at the higher index, the two elements are interchanged so that the element is placed before the bigger one. This process will continue till the list of unsorted elements exhausts.
-This procedure of sorting is called bubble sorting because elements ‘bubble’ to the top of the list. Note that at end of the first pass, the largest element in the list will be placed at its proper position (i.e., at the end of the list).
+Merge sort is a sorting algorithm that uses the divide, conquer, and combine algorithmic paradigm.
+* _Divide_ means partitioning the n-element array to be sorted into two sub-arrays of n/2 elements. If
+A is an array containing zero or one element, then it is already sorted. However, if there are more
+elements in the array, divide A into two sub-arrays, A1 and A2, each containing about half of the
+elements of A.
+* _Conquer_ means sorting the two sub-arrays recursively using merge sort.
+* _Combine_ means merging the two sorted sub-arrays of size n/2 to produce the sorted array of n elements.
 
-## Technique
-1. In Pass 1, A [0] and A [1] are compared, then A [1] is compared with A [2], A [2] is compared with A [3], and so on. Finally, A[N-2] is compared with A[N-1]. Pass 1 involves n-1 comparisons and places the biggest element at the highest index of the array.
-2. In Pass 2, A [0] and A [1] are compared, then A [ 1] is compared with A [2], A [2] is compared with A[3], and so on. Finally, A[N-3] is compared with A[N-2]. Pass 2 involves n-2 comparisons and places the second biggest element at the second highest index of the array.
-3. In Pass 3. A[O] and A [1) are compared, then A [1] is compared with A [2], A [2] is compared with A [3]. and so on. Finally, A[N-4] is compared with A[N-3]. Pass 3 involves n-3 comparisons and places the third biggest element at the third highest index of the array. 
-4. In Pass n-1, A[o] and A [ 1] are compared so that A [0] <A [1]. After this step, all the elements of the array are arranged in ascending order.
-Complexity of Bubble Sort
-The complexity of any sorting sort, we have seen algorithm depends upon the number of comparisons. that there are N-1 passes in total. In the first pass, N-1 comparisons arc place the highest element in its correct position. Then, in Pass 2, there are N-2 comparisons, and the second highest element is placed in its position. Therefore, to compute the complexity of bubble sort, we need to calculate the total number of du comparisons. It can be given as 
+Merge sort algorithm focuses on two main concepts to improve its performance (running time):
+Σ A smaller list takes fewer steps and thus less time to sort than a large list.
+As number of steps is relatively less, thus less time is needed to create a sorted list from two sorted lists rather than creating it using two unsorted lists.
+The basic steps of a merge sort algorithm are as follows:
+If the array is of length 0 or 1, then it is already sorted.
+Otherwise, divide the unsorted array into two sub-arrays of about half the size.
+Use merge sort algorithm recursively to sort each sub-array.
+Merge the two sub-arrays to form a single sorted list.
+
+## Algorithm:
 ```
-f(n) = n +(n - 1) +(n - 2) +(n -3)+.... +3 + 2 +1
-f(n) = n(n-1)/2
-f(n) = n^2/2+ O(n) = O(n^2)
+MERGE (ARR, BEG, MID, END)
+Step 1: [INITIALIZE] SET I = BEG, J = MID + 1, INDEX =
+Step 2: Repeat while (I <= MID) AND (J<=END)
+         IF ARR[I] < ARR[J]
+          SET TEMP[INDEX] = ARR[I]
+          SET I = I + 1
+         ELSE
+          SET TEMP[INDEX] = ARR[J]
+          SET J = J + 1
+         [END OF IF]
+        SET INDEX = INDEX + 1
+        [END OF LOOP]
+Step 3: [Copy the remaining elements of right sub-array, if any]
+        IF I > MID
+         Repeat while J <= END
+          SET TEMP[INDEX] = ARR[J]
+          SET INDEX = INDEX + 1, SET J = J + 1
+         [END OF LOOP]
+         [Copy the remaining elements of left sub-array, if any]
+        ELSE
+         Repeat while I <= MID
+          SET TEMP[INDEX] = ARR[I]
+          SET INDEX = INDEX + 1, SET I = I + 1
+         [END OF LOOP]
+        [END OF IF]
+Step 4: [Copy the contents of TEMP back to ARR] SET K=
+Step 5: Repeat while K < INDEX
+          SET ARR[K] = TEMP[K]
+          SET K = K + 1
+         [END OF LOOP]
+Step 6: END
+
+MERGE_SORT (ARR, BEG, END)
+Step 1: IF BEG < END
+         SET MID = (BEG + END)/2
+         CALL MERGE_SORT (ARR, BEG, MID)
+         CALL MERGE_SORT (ARR, MID + 1, END)
+         MERGE (ARR, BEG, MID, END)
+        [END OF IF]
+Step 2: END
+
 ```
-Therefore, the complexity of bubble sort algorithm is o(n*). It means the time required to execute bubble sort is proportional to n^2, where n is the total number of elements in the array.
 
 ## Pictoral Representation
+![Alt text](../images/merge-sort.png?raw=true "Title")
 
-![Alt text](../images/bubble-sort.png?raw=true "Title")
-
-## Reference :
- https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
+## Reference 
+ <a href="https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/">Hackerearth</a>
  <br>
- https://www.geeksforgeeks.org/bubble-sort/
-
+<a href="https://www.geeksforgeeks.org/merge-sort/">Geeks for Geeks</a>
