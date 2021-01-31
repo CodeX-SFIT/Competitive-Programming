@@ -1,5 +1,5 @@
 # Binary Search Trees
-	A binary search tree, also known as an ordered binary tree, is a variant of binary tree in which the
+A binary search tree, also known as an ordered binary tree, is a variant of binary tree in which the
 nodes are arranged in an order.A binary search tree, also known as an ordered binary tree, is a variant of binary trees in which the nodes are arranged in an order.
 In a binary search tree, all the nodes in the left sub-tree have a value less than that of the root
 node. Correspondingly, all the nodes in the right sub-tree have a value either equal to or greater
@@ -18,7 +18,7 @@ that are indexed by some key value.
 Binary search trees also speed up the insertion and deletion operations. The tree has a speed
 advantage when the data in the structure changes rapidly.
 ## Complexity
-	Binary search trees are considered to be efficient data structures especially when compared with
+Binary search trees are considered to be efficient data structures especially when compared with
 sorted linear arrays and linked lists. In a sorted array, searching can be done in O(log2n) time, but
 insertions and deletions are quite expensive. In contrast, inserting and deleting elements in a linked
 list is easier, but searching for an element is done in O(n) time.
