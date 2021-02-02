@@ -113,3 +113,153 @@ The delete function deletes a node from the
 binary search tree. However, utmost care
 should be taken that the properties of the binary
 search tree are not violated and nodes are not
+lost in the process. We will take up three cases
+in this section and discuss how a node is
+deleted from a binary search tree.
+### Case 1: Deleting a Node that has No Children
+Look at the binary search tree given in Fig.
+10.11. If we have to delete node 78, we can
+simply remove this node without any issue.
+This is the simplest case of deletion.
+### Case 2: Deleting a Node with One Child
+To handle this case, the node’s child is set
+as the child of the node’s parent. In other
+words, replace the node with its child. Now,
+if the node is the left child of its parent, the
+node’s child becomes the left child of the
+node’s parent. Correspondingly, if the node
+is the right child of its parent, the node’s
+child becomes the right child of the node’s
+parent. Look at the binary search tree shown
+in Fig. 10.12 and see how deletion of node
+54 is handled.
+### Case 3: Deleting a Node with Two Children
+To handle this case, replace the node’s value
+with its in-order predecessor (largest value
+in the left sub-tree) or in-order successor
+(smallest value in the right sub-tree). The
+in-order predecessor or the successor can
+then be deleted using any of the above
+cases. Look at the binary search tree given in
+Fig. 10.13 and see how deletion of node with
+value 56 is handled.
+This deletion could also be handled by
+replacing node 56 with its in-order successor,
+as shown in Fig. 10.14.
+Now, let us look at Fig. 10.15 which
+shows the algorithm to delete a node from
+a binary search tree.
+In Step 1 of the algorithm, we first check
+if TREE=NULL, because if it is true, then the
+node to be deleted is not present in the tree.
+However, if that is not the case, then we
+check if the value to be deleted is less than
+the current node’s data. In case the value is
+less, we call the algorithm recursively on the
+node’s left sub-tree, otherwise the algorithm
+is called recursively on the node’s right
+sub-tree.
+Note that if we have found the node
+whose value is equal to VAL, then we check
+which case of deletion it is. If the node to
+be deleted has both left and right children,
+then we find the in-order predecessor of
+the node by calling findLargestNode(TREE ->
+LEFT) and replace the current node’s value
+with that of its in-order predecessor. Then,
+we call Delete(TREE -> LEFT, TEMP -> DATA)
+to delete the initial node of the in-order
+predecessor. Thus, we reduce the case 3 of
+deletion into either case 1 or case 2 of
+deletion.
+If the node to be deleted does not have
+any child, then we simply set the node to
+NULL. Last but not the least, if the node to be
+deleted has either a left or a right child but
+not both, then the current node is replaced
+by its child node and the initial child node
+is deleted from the tree.
+The delete function requires time
+proportional to the height of the tree in
+the worst case. It takes O(log n) time to
+execute in the average case and W(n) time
+in the worst case.
+```
+Delete (TREE, VAL)
+Step 1: IF TREE = NULL
+            Write "VAL not found in the tree"
+        ELSE IF VAL < TREE DATA
+            Delete(TREE->LEFT, VAL)
+        ELSE IF VAL > TREE DATA
+            Delete(TREE RIGHT, VAL)
+        ELSE IF TREE LEFT AND TREE RIGHT
+            SET TEMP = findLargestNode(TREE LEFT)
+            SET TREE DATA = TEMP DATA
+            Delete(TREE LEFT, TEMP DATA)
+        ELSE
+            SET TEMP = TREE
+            IF TREE LEFT = NULL AND TREE RIGHT = NULL
+                        SET TREE = NULL
+            ELSE IF TREE LEFT != NULL
+                        SET TREE = TREE LEFT
+            ELSE
+                        SET TREE = TREE RIGHT
+            [END OF IF]
+            FREE TEMP
+        [END OF IF]
+Step 2: END
+
+```
+## 4. Determining the Height of a Binary Search Tree
+In order to determine the height of a binary
+search tree, we calculate the height of
+the left sub-tree and the right sub-tree.
+Whichever height is greater, 1 is added to it. For example, if the height of the left sub-tree is
+greater than that of the right sub-tree, then 1 is added to the left sub-tree, else 1 is added to the
+right sub-tree.
+Look at Fig. 10.16. Since the height of the right sub-tree is greater than the height of the left
+sub-tree, the height of the tree = height (right sub-tree) + 1= 2 + 1 = 3.
+Figure 10.17 shows a recursive algorithm that determines the height of a binary search tree.
+In Step 1 of the algorithm, we first check if the current node of the TREE = NULL. If the condition
+is true, then 0 is returned to the calling code. Otherwise, for every node,
+we recursively call the algorithm to calculate the height of its left sub-tree
+as well as its right sub-tree. The height of the tree at that node is given by
+adding 1 to the height of the left sub-tree or the height of right sub-tree,
+whichever is greater.
+```
+Height (TREE)
+Step 1: IF TREE = NULL
+            Return
+        ELSE
+            SET LeftHeight = Height(TREE LEFT)
+            SET RightHeight = Height(TREE RIGHT)
+            IF LeftHeight > RightHeight
+                Return LeftHeight + 1
+            ELSE
+                Return RightHeight + 1
+            [END OF IF]
+        [END OF IF]
+Step 2: END
+```
+## 5. Determining the Number of Nodes
+Determining the number of nodes in a binary search tree is similar to
+determining its height. To calculate the total number of elements/nodes
+in the tree, we count the number of nodes in the
+left sub-tree and the right sub-tree.
+Number of nodes = totalNodes(left sub–tree)
++ totalNodes(right sub–tree) + 1
+Consider the tree given in Fig. 10.18. The total
+number of nodes in the tree can be calculated as:
+Total nodes of left sub–tree = 1
+Total nodes of left sub–tree = 5
+Total nodes of tree = (1 + 5) + 1
+Total nodes of tree = 7
+Figure 10.19 shows a recursive algorithm to
+calculate the number of nodes in a binary search
+tree. For every node, we recursively call the
+algorithm on its left sub-tree as well as the right
+sub-tree. The total number of nodes at a given
+node is then returned by adding 1 to the number
+of nodes in its left as well as right sub-tree. However if the tree is empty,
+that is TREE = NULL, then the number of nodes will be zero.
+
